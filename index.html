@@ -1,66 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TOEFL Certificate</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOEFL Certificate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <!-- LOGIN -->
+    <div class="container" id="loginPage">
+      <div class="header">
+        <img src="tmi_logo.png" class="logo" />
+        <h1>TOEFL Certificate</h1>
+        <h3>Senior High School</h3>
+        <h4>Tunas Mekar Indonesia</h4>
+      </div>
 
-<body>
+      <h2>Check Your Certificate</h2>
+      <p>Please login using your NIK and Date of Birth</p>
 
-  <!-- LOGIN -->
-  <div class="container" id="loginPage">
+      <form id="loginForm">
+        <input type="text" id="nik" placeholder="Enter NIK" required />
+        <input type="text" id="dob" placeholder="DD/MM/YYYY" required />
+        <button type="submit">Check Certificate</button>
+      </form>
 
-    <div class="header">
-      <img src="tmi_logo.png" class="logo">
-      <h1>TOEFL Certificate</h1>
-      <h3>Senior High School</h3>
-      <h4>Tunas Mekar Indonesia</h4>
+      <p id="errorMsg"></p>
     </div>
 
-    <h2>Check Your Certificate</h2>
-    <p>Please login using your NIK and Date of Birth</p>
+    <!-- RESULT -->
+    <div class="container hidden" id="resultPage">
+      <div class="header">
+        <img src="tmi_logo.png" class="logo" />
+        <h1>TOEFL Certificate</h1>
+        <h3>Senior High School</h3>
+        <h4>Tunas Mekar Indonesia</h4>
+      </div>
 
-    <form id="loginForm">
-      <input type="text" id="nik" placeholder="Enter NIK" required>
-      <input type="text" id="dob" placeholder="DD/MM/YYYY" required>
-      <button type="submit">Check Certificate</button>
-    </form>
+      <h2>Certificate Result</h2>
 
-    <p id="errorMsg"></p>
+      <div class="result-box">
+        <p class="big-name" id="nama"></p>
+      </div>
 
-  </div>
+      <!-- PDF PREVIEW -->
+      <div class="pdf-preview">
+        <iframe id="pdfFrame"></iframe>
+      </div>
 
+      <!-- BUTTON DI BAWAH PREVIEW -->
+      <div class="btn-group">
+        <a id="viewBtn" target="_blank">👁️ View Certificate</a>
+        <a id="downloadBtn" download>⬇️ Download Certificate</a>
+      </div>
 
-  <!-- RESULT -->
-  <div class="container hidden" id="resultPage">
-
-    <div class="header">
-      <img src="tmi_logo.png" class="logo">
-      <h1>TOEFL Certificate</h1>
-      <h3>Senior High School</h3>
-      <h4>Tunas Mekar Indonesia</h4>
+      <button type="button" onclick="logout()">Back</button>
     </div>
 
-    <h2>Certificate Result</h2>
-
-    <div class="result-box">
-      <p class="big-name" id="nama"></p>
-      <p class="score">TOTAL SCORE: <span id="total"></span></p>
-    </div>
-
-    <div class="btn-group">
-      <a id="viewBtn" target="_blank">👁️ View Certificate</a>
-      <a id="downloadBtn" download>⬇️ Download Certificate</a>
-    </div>
-
-    <button type="button" onclick="logout()">Back</button>
-
-  </div>
-
-  <script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
